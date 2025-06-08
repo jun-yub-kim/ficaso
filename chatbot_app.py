@@ -4,8 +4,8 @@ from openai import OpenAI
 
 client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
 
-st.set_page_config(page_title="회계 챗봇", page_icon="💼")
-st.title("💼 회계 데이터 기반 GPT 챗봇")
+st.set_page_config(page_title="Ficaso", page_icon="🦉")
+st.title("This is an Proto-type Financial Chat bot for GM")
 
 try:
     df = pd.read_excel("finance_data.xlsx")
@@ -39,7 +39,7 @@ if user_input:
     assistant_reply = response.choices[0].message.content
     st.session_state.messages.append({"role": "assistant", "content": assistant_reply})
 
-# 대화 내용은 여기서만 출력
+
 for msg in st.session_state.messages[1:]:
     if msg["role"] == "user" and "회계 데이터" not in msg["content"]:
         st.markdown(f"**👤 질문:** {msg['content']}")
