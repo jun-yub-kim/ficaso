@@ -5,7 +5,7 @@ from openai import OpenAI
 client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
 
 st.set_page_config(page_title="Ficaso", page_icon="🦉")
-st.title("This is an Proto-type Financial Chat bot for GM")
+st.title("This is an Proto-type Chat bot for GM")
 
 try:
     df = pd.read_excel("finance_data.xlsx")
