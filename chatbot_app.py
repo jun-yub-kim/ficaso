@@ -21,7 +21,7 @@ if "messages" not in st.session_state:
 user_input = st.text_input("질문을 입력하세요:", key="user_input")
 
 if user_input:
-    data_snippet = df.head(900).to_markdown(index=False)
+    data_snippet = df.head(300).to_markdown(index=False)
     prompt = (
         "다음은 회계 데이터 일부야:\n\n"
         f"{data_snippet}\n\n"
